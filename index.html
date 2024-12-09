@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es" lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cam´s Loft</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="./img/sofa.png" type="image/x-icon">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!--NAVBAR-->
+  <nav>
+    <img src="img/sofa.png" alt="logoleft" id="left-logo">
+    <div id="links-container">
+      <a href="#section1" onclick="showSection('section1')" class="active">Lobby</a>
+      <a href="#section2" onclick="showSection('section2')">Galería</a>
+      <a href="#section3" onclick="showSection('section3')">Poesías del Baúl</a>
+      <a href="#section4" onclick="showSection('section4')">Melodías</a>
+    </div>
+    <img src="img/assetblack.png" alt="logoright" id="right-logo">
+  </nav>
+
+  <!--SECCION 1: LOFT-->
+  <div id="section1" class="section">
+    <div class="image-playercontainer">
+      <img src="img/gif.gif" alt="girl with computer" id="girl1">
+      <div class="player">
+        <div class="wrapper">
+          <div class="details">
+            <div class="now-playing">PLAYING x OF y</div>
+            <div class="track-art"></div>
+            <div class="track-name">Track Name</div>
+            <div class="track-artist">Track Artist</div>
+          </div>
+
+          <div class="slider_container">
+            <div class="current-time">00:00</div>
+            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+            <div class="total-duration">00:00</div>
+          </div>
+
+          <div class="slider_container">
+            <i class="fa fa-volume-down"></i>
+            <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+            <i class="fa fa-volume-up"></i>
+          </div>
+
+          <div class="buttons">
+            <div class="random-track" onclick="randomTrack()">
+              <i class="fas fa-random fa-2x" title="random"></i>
+            </div>
+            <div class="prev-track" onclick="prevTrack()">
+              <i class="fa fa-step-backward fa-2x"></i>
+            </div>
+            <div class="playpause-track" onclick="playpauseTrack()">
+              <i class="fa fa-play-circle fa-5x"></i>
+            </div>
+            <div class="next-track" onclick="nextTrack()">
+              <i class="fa fa-step-forward fa-2x"></i>
+            </div>
+            <div class="repeat-track" onclick="repeatTrack()">
+              <i class="fa fa-repeat fa-2x" title="repeat"></i>
+            </div>
+          </div>
+
+          <div id="wave">
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--SECCIÓN 2: GALERÍA-->
+  <div id="section2" class="section" style="display:none;">
+    <div class="gallery">
+      <h1 class="title2">Galería de escritorio</h1>
+      <h2 id="title4">Sesion fotográfica: Amar la trama más que el desenlace</h2>
+      <div id="galleryimg">
+        <img src="./img/ficha1.jpg" alt="ficha1">
+        <img src="./img/ficha3.jpg" alt="ficha3">
+        <img src="./img/ficha5.jpg" alt="ficha5">
+        <img src="./img/ficha7.jpg" alt="ficha7">
+        <img src="./img/ficha9.jpg" alt="ficha9">
+        <img src="./img/ficha11.jpg" alt="ficha11">
+        <img src="./img/ficha13.jpg" alt="ficha13">
+        <img src="./img/ficha15.jpg" alt="ficha15">
+        <img src="./img/ficha2.jpg" alt="ficha2">
+        <img src="./img/ficha4.jpg" alt="ficha4">
+        <img src="./img/ficha6.jpg" alt="ficha6">
+        <img src="./img/ficha8.jpg" alt="ficha8">
+        <img src="./img/ficha10.jpg" alt="ficha10">
+        <img src="./img/ficha12.jpg" alt="ficha12">
+        <img src="./img/ficha14.jpg" alt="ficha14">
+        <img src="./img/ficha16.jpg" alt="ficha16">
+      </div>
+      <h2 id="title5">Posters</h2>
+      <div id="galleryimg2">
+        <img src="./img/poster1.jpg" alt="poster1">
+        <img src="./img/poster2.jpg" alt="poster2">
+        <img src="./img/poster3.jpeg" alt="poster3">
+        <img src="./img/poster4.jpg" alt="poster4">
+      </div>
+      <h2 id="title6">Ilustraciones digitales</h2>
+      <div id="galleryimg3">
+        <img src="./img/ilustracion1.png" alt="ilustracion1">
+        <img src="./img/ilustracion2.png" alt="ilustracion2">
+        <img src="./img/ilustracion3.png" alt="ilustracion3">
+        <img src="./img/ilustracion4.jpg" alt="ilustracion4">
+        <img src="./img/ilustracion5.jpg" alt="ilustracion5">
+      </div>
+    </div>
+  </div>
+
+  <!--SECCIÓN 3: POEMAS-->
+  <div id="section3" class="section" style="display:none;">
+    <div class="poems">
+      <div id="titles">
+        <h1 id="title1"> Poesías del Baúl</h1>
+        <p id="p1">Colección de poemas ineditos, extraídos de lo más recóndito del baúl de mi mente</p>
+        <h2 class="title2">De desamor en cartas de medianoche</h2>
+      </div>
+
+      <div id="poem-container">
+        <p id="poem1">1.<br>Y ojalá te encuentre, en otra noche de invierno <br>
+          donde busques cobija en mi lecho eterno. <br>
+          Ojalá te encuentre, desesperado, porque el frío de afuera te esta matando.
+          <br> Y cuando busques calor en otro pecho, como te es usual hacer <br>
+          no haya ninguno que se iguale, no haya lugar donde ser. <br>
+          Con el corazón en las manos, a medio latir, cada arteria se tapa de frío marfil. <br>
+          Con el corazón cada vez más apagado, sin poderlo sentir, <br>
+          espero te encuentres con la empatía, con cómo me hiciste sentir (acordate de mi).
+        </p>
+        <p id="poem2">2.<br>Amaba tocarnos.<br>
+          Amaba sentir el roce de su piel junto a la mía,<br>
+          deslizarnos,<br>
+          entrar en perfecta sintonía.<br>
+          Respirar en compases <br>
+          y a veces saltearnos los mismos, <br>
+          aguantar el aire, para posteriormente derretirnos. <br>
+          Sentir tus brazos rodeando mi cuerpo, tu torso junto al mío.<br>
+          Sentir agitada tu respiración, solo para mis oídos. <br>
+          Terminar entrelazados, en un secreto solo nuestro.<br>
+          En un cómplice acuerdo.<br>
+          Tan efímero en vos, tan eterno en mí.
+        </p>
+        <p id="poem3">3.<br> Le hablé a la luna de vos, <br>
+          yo tampoco me hubiera contestado.<br>
+          Mil poemas al filo de la medianoche,<br>
+          odio saber que no te he olvidado.<br>
+          <br>
+          Me da rabia tu existencia <br>
+          Impune, ingrata <br>
+          que no me deja desprenderme de lo que alguna vez fuimos. <br>
+          <br>
+          Se esfuma en el tiempo mi memoria <br>
+          me escondo de lo que soy capaz de recordar<br>
+          huyó del fiel remordimiento <br>
+          de haberte dejado entrar.
+        </p>
+      </div>
+
+      <div id="titles2">
+        <h2 class="title2">Fragmento de "Tu inmisericorde abismo"</h2>
+      </div>
+      <div id="poem-container2">
+        <p id="poem4">
+          "Miren que realmente por ahora ese vidrio recubierto por una fina capa de metal
+          es totalmente abúlico, pero las mareas que ocasiona dentro de mi ser, debieran
+          de ser motivo suficiente para ejercerle a ese artefacto insensible alguna especie
+          de castigo.<br><br>Mareas que oscilan con revuelo, feroces, salvajes y aterradoras.<br>En
+          medio de aquella tempestad yace mi persona, tumbada sobre una roca, siempre
+          un paso más cerca de perderme entre las aguas y unírmeles en movimiento.<br>
+          Similar a un canto de sirena me llaman, de un segundo a otro me encuentro
+          sumergida;<br> una puede luchar cuanto quiera contra las corrientes y tratar de llegar
+          a la superficie, pero el camino del perdedor luce más fácil y el rendirse se presenta
+          tan tentador.<br> De repente las aguas se convierten en un gran manto azul que me
+          cobija, y para ser franca, yo nunca supe nadar.<br><br>
+          Así nos encontramos, el objeto y yo, frente a frente.<br>He tratado de extenderle la
+          mano, siempre tiene el ímpetu de rechazarla, así que la devuelvo hacia mis propias
+          extremidades y señalo, deslizo, agarro y aprieto con disgusto y
+          descontento todo aquello que recubre la totalidad de mi cuerpo, aquello que hace
+          peso en la balanza, aquello que se ensancha inclusive después de un vaso de
+          agua.<br> Recorro fielmente y casi hasta con pena cada rincón de mi envase,
+          dañado, frágil, vulnerable e incompetente.<br> Mi creatividad asalta mis pensamientos y fantasea con
+          recortar la piel sobrante, agregar un poco por allí y otro poco por allá, hasta
+          rellenar el ideal que el mundo supone que yo cumpla, ideal al que miro con
+          desprecio, pero ciegamente busco seguir.<br><br>
+          El lazo estrecho que mantengo con mi reflejo se posiciona en mí como la relación
+          más desgastante que conscientemente continúo perpetuando,<br>¿Cómo puede
+          escapar uno de aquella que nos mantiene tan cautivos, tan inmersos?<br>En un
+          mundo hostil que nos enseña a odiarnos y a establecer aquella conexión
+          dependiente y afectiva con un simple objeto material, al que le añadimos un
+          sentido arrasador, que existe como una sombra infeliz que guía nuestro andar, y
+          sostiene firmemente nuestros hombros, ejerciendo una presión abrumadora que
+          nos obliga a agachar la cabeza."
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--SECCIÓN 4: MÚSICA-->
+  <div id="section4" class="section" style="display:none;">
+    <div id="music">
+      <h2 class="title2">Mis recomendaciones musicales del mes</h2>
+
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 12</div>
+          <a href="https://youtu.be/hl3-ZPg-JAA?si=zrt5S9VlWG2GOin1"><img src="./images/cover1.webp" alt="cover1"
+              style="width:100%"></a>
+          <div class="text">Rich Spirit - Kendrick Lamar</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 12</div>
+          <a href="https://youtu.be/aMqOtlVwQYM?si=2ofnq1iQVGAfBu3E"><img src="./images/cover2.jpg" alt="cover2"
+              style="width:100%"></a>
+          <div class="text">Merry Christmas, Please Don´t Call - Bleachers</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 12</div>
+          <a href="https://youtu.be/AAy0wPlGiOk?si=3fYC3nkwvziwot8w"><img src="./images/cover3.jpeg" alt="cover3"
+              style="width:100%"></a>
+          <div class="text">Ganas de verte - Airbag</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 12</div>
+          <a href="https://youtu.be/Qn8F_u0vBNI?si=5CoQxEzm7cVjgBJQ"><img src="./images/cover4.jpeg" alt="cover4"
+              style="width:100%"></a>
+          <div class="text">No one noticed - The Marias</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 12</div>
+          <a href="https://youtu.be/qYj4l5Xntt0?si=YX1vCy5ivuiPWbgI"><img src="./images/cover5.jpeg" alt="cover5"
+              style="width:100%"></a>
+          <div class="text">The feeling - Justin Bieber, Halsey</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">6 / 12</div>
+          <a href="https://youtu.be/vcZAjGbXEiE?si=28C740rofOB7XmhV"><img src="./images/cover6.png" alt="cover6"
+              style="width:100%"></a>
+          <div class="text">Westcoast Collective - Dominic Fike</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">7 / 12</div>
+          <a href="https://youtu.be/Gs2KJy1YUec?si=toe4W3Ai3Jkqh7Cg"><img src="./images/cover7.jpg" alt="cover7"
+              style="width:100%"></a>
+          <div class="text">Occasional Stoner - Eyedress</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">8 / 12</div>
+          <a href="https://youtu.be/ds7YhkUwiA8?si=M46hJSaKb1R6uMDN"><img src="./images/cover8.jpg" alt="cover8"
+              style="width:100%"></a>
+          <div class="text">Driving - DWLLRS</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">9 / 12</div>
+          <a href="https://youtu.be/WIGilAUVeq0?si=WLc3082O61Z6JhFo"><img src="./images/cover9.jpg" alt="cover9"
+              style="width:100%"></a>
+          <div class="text">Vampire - Dominic Fike</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">10 / 12</div>
+          <a href="https://youtu.be/16KSivdIGjQ?si=zMIpkEIHoQJgFP9Z"><img src="./images/cover10.png" alt="cover10"
+              style="width:100%"></a>
+          <div class="text">Sticky - Tyler, The Creator</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">11 / 12</div>
+          <a href="https://youtu.be/wiALRpD0Ztg?si=b8MEHTK_dEKyAI0k"><img src="./images/cover11.png" alt="cover11"
+              style="width:100%"></a>
+          <div class="text">man at the garden - Kendrick Lamar</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">12 / 12</div>
+          <a href="https://youtu.be/--JuMkludKM?si=IboGZk-AcST5aDxy"><img src="./images/cover12.jpg" alt="cover12"
+              style="width:100%"></a>
+          <div class="text">Tejano Blue - Cigarretes after sex</div>
+        </div>
+
+        <!--Botones de prev y next-->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+
+      <!--Puntos de abajo-->
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+        <span class="dot" onclick="currentSlide(8)"></span>
+        <span class="dot" onclick="currentSlide(9)"></span>
+        <span class="dot" onclick="currentSlide(10)"></span>
+        <span class="dot" onclick="currentSlide(11)"></span>
+        <span class="dot" onclick="currentSlide(12)"></span>
+      </div>
+    </div>
+
+    <!--FORMULARIO-->
+    <div class="form">
+      <h2 id="titulo">¡Me gustaria saber más de vos! ¿Podrías completar este formulario?</h2>
+      <div id="form-content">
+        <form action="#">
+          <div class="selectedforms">
+            <label for="pname">Primer nombre:</label><br>
+            <input type="text" id="pname" name="pname" placeholder="Ingresa tu nombre" required><br><br>
+
+            <label for="aname">Apellido:</label><br>
+            <input type="text" id="aname" name="aname" placeholder="Ingresa tu apellido" required><br><br>
+
+            <label for="email">Ingresa tu email:</label><br>
+            <input type="email" id="email" name="email" placeholder="12345@gmail.com" required><br><br>
+
+            <label for="phone">Ingresa tu número telefónico:</label><br>
+            <input type="tel" id="phone" name="phone" placeholder="+598 00 000 000"
+              pattern="^\+598\s\d{2}\s\d{3}\s\d{3}$" required><br>
+          </div>
+
+          <br>
+          <br>
+          <p class="decorated">¿Cuál es su aplicación favorita para escuchar música?:</p><br>
+          <input type="radio" id="youtube" name="fav_app" value="youtube">
+          <label for="youtube">YouTube</label><br>
+          <input type="radio" id="spotify" name="fav_app" value="spotify">
+          <label for="spotify">Spotify</label><br>
+          <input type="radio" id="apple" name="fav_app" value="apple">
+          <label for="apple">Apple Music</label><br>
+          <input type="radio" id="sound" name="fav_app" value="sound">
+          <label for="sound">Soundcloud</label><br>
+
+          <br>
+          <br>
+          <p class="decorated">¿Cuál es tu género musical más escuchado del momento?<br>(podes elegir más de uno)</p>
+          <br>
+          <input type="checkbox" id="genre1" name="genres[]" value="pop">
+          <label for="genre1">Pop</label><br>
+          <input type="checkbox" id="genre2" name="genres[]" value="rock">
+          <label for="genre2">Rock</label><br>
+          <input type="checkbox" id="genre3" name="genres[]" value="indie">
+          <label for="genre3">Indie</label><br>
+          <input type="checkbox" id="genre4" name="genres[]" value="jazz">
+          <label for="genre4">Jazz</label><br>
+          <input type="checkbox" id="genre5" name="genres[]" value="reggaeton">
+          <label for="genre5">Reggaetón</label><br>
+          <input type="checkbox" id="genre6" name="genres[]" value="rap">
+          <label for="genre6">Hip Hop/Rap</label><br>
+          <input type="checkbox" id="genre7" name="genres[]" value="electronica">
+          <label for="genre7">Electrónica</label><br>
+          <input type="checkbox" id="genre8" name="genres[]" value="rb">
+          <label for="genre8">Rhythm and Blues</label><br>
+
+          <br>
+          <br>
+          <p class="decorated">Del uno al diez, ¿cuánto te gusta escuchar música?</p>
+          <label for="music2"> (Entre 1 y 10):</label>
+          <input type="range" id="music2" name="music2" min="1" max="10" value="5"
+            oninput="document.getElementById('rangeValue').textContent = this.value;">
+          <span id="rangeValue">5</span><br>
+
+          <div class="selectedforms">
+            <br><br>
+            <p class="decorated">¿Cuántas recomendaciones musicales te gustaria que hubiese el próximo mes?</p>
+            <br><label for="quantity">Cantidad de recomendaciones:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="100"><br>
+          </div>
+
+          <br>
+          <br>
+          <p class="decorated">Si pudieras reflejar tu estado de animo al escuchar música en un solo color, ¿que color
+            eligirias?</p><br>
+          <label for="favcolor"></label>
+          <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+
+          <div class="selectedforms">
+            <br>
+            <p class="decorated">¿Tenes algún albúm/canción que desees recomendarme?:</p><br>
+            <label for="myfile">Inserta la portada aqui:</label>
+            <input type="file" id="myfile" name="myfile"><br><br>
+            <textarea id="recommendation" name="recommendation" rows="4" cols="50"
+              placeholder="Escribe aquí tus recomendaciones"></textarea><br><br>
+          </div>
+
+          <div id=submit>
+            <br><input type="image" src="./img/assetblack.png" alt="Submit" width="50" height="50">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--SECCIONES OCULTAS-->
+    <script>
+      // Mostrar la sección seleccionada y ocultar las demás
+      function showSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+          if (section.id === sectionId) {
+            section.style.display = 'block';
+          } else {
+            section.style.display = 'none';
+          }
+        });
+      }
+
+      // Mostrar la primera sección por defecto
+      document.addEventListener('DOMContentLoaded', () => {
+        showSection('section1');
+      });
+    </script>
+
+</body>
+
+</html>
